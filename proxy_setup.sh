@@ -2,7 +2,7 @@
 cd ~
 apt update
 apt install curl vim git
-wget -N -O https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
+wget -nc -O go1.17.7.linux-amd64.tar.gz https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
 tar -xf go1.17.7.linux-amd64.tar.gz
 mv go /usr/local
 cat > .profile << "EOF"
@@ -40,7 +40,7 @@ func main() {
 cat > goproxy.sh << "EOF"
 nohup go run /root/goproxy.go &
 EOF
-wget -N -O https://github.com/fatedier/frp/releases/download/v0.42.0/frp_0.42.0_linux_amd64.tar.gz
+wget -nc -O frp_0.42.0_linux_amd64.tar.gz https://github.com/fatedier/frp/releases/download/v0.42.0/frp_0.42.0_linux_amd64.tar.gz
 tar -zxf frp_0.42.0_linux_amd64.tar.gz
 mv frp_0.42.0_linux_amd64 frp
 echo "[common]
@@ -56,3 +56,4 @@ remote_port = $1
 cat > frp/frpc.sh << "EOF"
 nohup ./frpc1 -c ./frpc.ini&
 EOF
+
