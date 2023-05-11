@@ -26,15 +26,16 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 tty -s && mesg n || true
 EOF
-. ~/.profile
+source ~/.profile
+# . .profile
 go env -w GO111MODULE=off
 go get -v github.com/elazarl/goproxy
 echo "package main
 
 import (
-    "github.com/elazarl/goproxy"
-    "log"
-    "net/http"
+    \"github.com/elazarl/goproxy\"
+    \"log\"
+    \"net/http\"
 )
 
 func main() {
