@@ -9,6 +9,7 @@ apt update
 apt install curl vim git
 wget -nc -O go1.17.7.linux-amd64.tar.gz https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
 tar -xf go1.17.7.linux-amd64.tar.gz
+rm -r /usr/local/go
 mv go /usr/local
 cat > .profile << "EOF"
 # ~/.profile: executed by Bourne-compatible login shells1.
@@ -47,6 +48,7 @@ nohup go run /root/goproxy.go &
 EOF
 wget -nc -O frp_0.42.0_linux_amd64.tar.gz https://github.com/fatedier/frp/releases/download/v0.42.0/frp_0.42.0_linux_amd64.tar.gz
 tar -zxf frp_0.42.0_linux_amd64.tar.gz
+rm -r frp
 mv frp_0.42.0_linux_amd64 frp
 echo "[common]
 server_addr = 81.68.217.182
