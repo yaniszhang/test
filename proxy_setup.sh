@@ -1,4 +1,9 @@
 # https://github.com/CreditTone/FuckingWallOfChina
+if [ $# -eq 0 ]; then
+  echo "没有传递端口号"
+  exit 1
+fi
+
 cd ~
 apt update
 apt install curl vim git
@@ -54,6 +59,6 @@ local_port = $1
 remote_port = $1
 "> frp/frpc.ini
 cat > frp/frpc.sh << "EOF"
-nohup ./frpc1 -c ./frpc.ini&
+nohup ./frpc -c ./frpc.ini&
 EOF
 
